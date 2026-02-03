@@ -3,143 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Sederhana</title>
-
+    <title>DevOps - Culture, Practice, Movement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Navbar */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 15px 30px;
-            color: white;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .navbar a {
-            color: white;
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 32px;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
             text-decoration: none;
-            margin-left: 15px;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff0054;
         }
 
         /* Hero Section */
         .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000 0%, #1a0033 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 0, 84, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-content {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(to right, #3498db, #2ecc71);
-            color: white;
+            z-index: 1;
+            padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 120px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #ff0054);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .hero button {
-            padding: 12px 25px;
-            border: none;
-            background-color: #ffffff;
-            color: #3498db;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hero button:hover {
-            background-color: #ecf0f1;
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
         }
 
-        /* Features */
-        .features {
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
         }
 
-        .card {
-            background: white;
-            width: 280px;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 20px;
+            }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+            .nav-links {
+                gap: 20px;
+            }
 
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
+            .hero h1 {
+                font-size: 60px;
+                letter-spacing: 5px;
+            }
 
+            .hero p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
-
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <h2>MyWebsite</h2>
-        <div>
-            <a href="#">Home</a>
-            <a href="#">Fitur</a>
-            <a href="#">Tentang</a>
-            <a href="#">Kontak</a>
-        </div>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">DEVOPS</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#pillars">Pillars</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#videos">Videos</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Selamat Datang di Website Kami</h1>
-        <p>Solusi terbaik untuk kebutuhan digital Anda</p>
-        <button>Mulai Sekarang</button>
+        <div class="hero-content">
+            <h1>DEVOPS</h1>
+            <p>Culture • Practice • Movement</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ff0054" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-
-        <div class="card">
-            <h3>Mudah Digunakan</h3>
-            <p>Tampilan sederhana dan mudah dipahami oleh pengguna.</p>
-        </div>
-
-        <div class="card">
-            <h3>Responsif</h3>
-            <p>Bisa diakses di HP, tablet, dan laptop.</p>
-        </div>
-
-        <div class="card">
-            <h3>Aman</h3>
-            <p>Data Anda terlindungi dengan sistem keamanan.</p>
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 MyWebsite | All Rights Reserved</p>
-    </footer>
-
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
