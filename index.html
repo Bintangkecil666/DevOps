@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="id">
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,6 +165,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+            margin-top: 40px;
         }
 
         .about-text {
@@ -176,6 +176,7 @@
 
         .about-text strong {
             color: #ff0054;
+            font-weight: 700;
         }
 
         .highlight-box {
@@ -209,7 +210,26 @@
             background: rgba(255, 255, 255, 0.03);
             padding: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0054, #ff6b9d);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
         }
 
         .pillar-card:hover {
@@ -221,6 +241,7 @@
         .pillar-card h3 {
             font-family: 'Bebas Neue', cursive;
             font-size: 36px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
             color: #ff0054;
         }
@@ -229,6 +250,99 @@
             font-size: 16px;
             line-height: 1.6;
             font-weight: 300;
+        }
+
+        /* =========================
+           BENEFITS
+        ========================== */
+        .benefits {
+            background: #000;
+        }
+
+        .benefits-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .benefit-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 48px;
+            color: #ff0054;
+            min-width: 60px;
+        }
+
+        .benefit-content h4 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .benefit-content p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* =========================
+           VIDEOS
+        ========================== */
+        .videos {
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-item h4 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        .video-item p {
+            padding: 0 20px 20px;
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            text-align: center;
+            padding: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* =========================
@@ -245,19 +359,17 @@
 
             .section-title {
                 font-size: 50px;
-
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 80px 25px;
-
+            .benefits-list {
+                grid-template-columns: 1fr;
             }
 
-            .about-grid {
+            .videos-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -265,367 +377,10 @@
                 padding: 80px 25px;
             }
         }
-
-         /* =========================
-           Manfaat
-        ========================== */
-
-        h2 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 48px;
-            color: #ff0054;
-            margin-bottom: 30px;
-        }
-
-        h3 {
-            font-size: 24px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-=======
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevOps - Culture, Practice, Movement</title>
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      /* =========================
-           GLOBAL
-        ========================== */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        background: #000;
-        color: #fff;
-        overflow-x: hidden;
-      }
-
-      section {
-        padding: 120px 50px;
-      }
-
-      /* =========================
-           NAVIGATION
-        ========================== */
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 20px 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .logo {
-        font-family: "Bebas Neue", cursive;
-        font-size: 32px;
-        letter-spacing: 3px;
-      }
-
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-      }
-
-      .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 14px;
-        text-transform: uppercase;
-      }
-
-      .nav-links a:hover {
-        color: #ff0054;
-      }
-
-      /* =========================
-           HERO
-        ========================== */
-      .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #000 0%, #1a0033 100%);
-        position: relative;
-      }
-
-      .hero-content {
-        text-align: center;
-        z-index: 1;
-      }
-
-      .hero h1 {
-        font-family: "Bebas Neue", cursive;
-        font-size: 120px;
-        letter-spacing: 10px;
-        background: linear-gradient(45deg, #fff, #ff0054);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .hero p {
-        font-size: 24px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-
-      /* =========================
-           SECTION TITLE
-        ========================== */
-      section {
-        padding: 120px 50px;
-        position: relative;
-      }
-
-      .section-title {
-        font-family: "Bebas Neue", cursive;
-        font-size: 80px;
-        letter-spacing: 5px;
-        margin-bottom: 60px;
-        color: #ff0054;
-      }
-
-      /* =========================
-           ABOUT
-        ========================== */
-      .about {
-        background: #0a0a0a;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .about-content {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        margin-top: 40px;
-      }
-
-      .about-text {
-        font-size: 18px;
-        line-height: 1.8;
-        font-weight: 300;
-      }
-
-      .about-text strong {
-        color: #ff0054;
-        font-weight: 700;
-      }
-
-      .highlight-box {
-        background: rgba(255, 0, 84, 0.1);
-        border-left: 4px solid #ff0054;
-        padding: 30px;
-        margin: 30px 0;
-      }
-
-      /* =========================
-           PILLARS
-        ========================== */
-      .pillars {
-        background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
-      }
-
-      .pillars-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      .pillar-card {
-        background: rgba(255, 255, 255, 0.03);
-        padding: 40px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .pillar-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #ff0054, #ff6b9d);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s;
-      }
-
-      .pillar-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .pillar-card:hover {
-        background: rgba(255, 0, 84, 0.05);
-        border-color: #ff0054;
-        transform: translateY(-5px);
-      }
-
-      .pillar-card h3 {
-        font-family: "Bebas Neue", cursive;
-        font-size: 36px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        color: #ff0054;
-      }
-
-      .pillar-card p {
-        font-size: 16px;
-        line-height: 1.6;
-        font-weight: 300;
-      }
-
-      /* =========================
-           MANFAAT
-        ========================== */
-      .benefits {
-        background: #000;
-      }
-
-      .benefits-list {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-
-      .benefit-item {
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-      }
-
-      .benefit-number {
-        font-family: "Bebas Neue", cursive;
-        font-size: 48px;
-        color: #ff0054;
-        min-width: 60px;
-      }
-
-      .benefit-content h4 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
-
-      .benefit-content p {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.6;
-      }
-
-      @media (max-width: 768px) {
-        .benefits-list {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* =========================
-           VIDEOS
-        ========================== */
-      .videos {
-        background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
-      }
-
-      .videos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 40px;
-        max-width: 1400px;
-        margin: auto;
-      }
-
-      .video-item {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-      }
-
-      .video-wrapper iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-
-      .video-item h4 {
-        font-family: "Bebas Neue", cursive;
-        font-size: 24px;
-        padding: 20px;
-      }
-
-      .video-item p {
-        padding: 0 20px 20px;
-      }
-
-      footer {
-        text-align: center;
-        padding: 60px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      @media (max-width: 768px) {
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-        .section-title {
-          font-size: 50px;
-        }
-      }
->>>>>>> bintang
     </style>
-  </head>
+</head>
 
-  <body>
-    <nav>
-      <div class="logo">DEVOPS</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#pillars">Pillars</a></li>
-        <li><a href="#manfaat">Benefits</a></li>
-        <li><a href="#videos">Videos</a></li>
-      </ul>
-    </nav>
-
-<<<<<<< HEAD
+<body>
     <!-- Navigation -->
     <nav>
         <div class="logo">DEVOPS</div>
@@ -650,85 +405,6 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2 class="section-title">What is DevOps?</h2>
-
-            <div class="about-grid">
-                <div>
-                    <p class="about-text">
-                        <strong>DevOps</strong> adalah gabungan budaya, praktik, dan tools yang membantu organisasi
-                        menghasilkan aplikasi dengan kecepatan tinggi.
-                    </p>
-                </div>
-
-                <div class="highlight-box">
-                    <h3 class="highlight-title">Tujuan Utama</h3>
-                    <p>Menghilangkan hambatan antara tim development dan operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillars -->
-    <section id="pillars" class="pillars">
-        <h2 class="section-title">Core Pillars</h2>
-
-        <div class="pillars-grid">
-            <div class="pillar-card"><h3>Collaboration</h3><p>Kerja lintas tim.</p></div>
-            <div class="pillar-card"><h3>Automation</h3><p>Otomatisasi proses.</p></div>
-            <div class="pillar-card"><h3>Monitoring</h3><p>Observability berkelanjutan.</p></div>
-        </div>
-    </section>
-
- <!-- Manfaat DevOps -->
-    <section id="manfaat" class="manfaat">
-        <h2>Manfaat DevOps</h2>
-
-        <h3>1. Kecepatan Delivery Lebih Tinggi</h3>
-        <p>
-            Dengan DevOps, tim dapat merilis update dan fitur baru lebih cepat. Automation dalam testing dan deployment memungkinkan proses yang dulunya memakan waktu berhari-hari menjadi hanya beberapa menit.
-        </p>
-
-        <h3>2. Kolaborasi Tim Lebih Baik</h3>
-        <p>
-            DevOps menghilangkan "silo" antara tim development dan operations. Semua orang bekerja dengan tujuan yang sama, komunikasi lebih lancar, dan masalah dapat diselesaikan lebih cepat.
-        </p>
-
-        <h3>3. Kualitas dan Stabilitas Meningkat</h3>
-        <p>
-            Dengan continuous testing dan monitoring, bug dapat ditemukan lebih awal. Automation dalam testing memastikan setiap kode yang di-deploy sudah melalui serangkaian test yang konsisten.
-        </p>
-
-        <h3>4. Efisiensi Biaya</h3>
-        <p>
-            Automation mengurangi pekerjaan manual yang repetitif. Tim dapat fokus pada pekerjaan yang lebih bernilai. Error dan downtime berkurang sehingga menghemat biaya operasional.
-        </p>
-
-        <h3>5. Skalabilitas Lebih Mudah</h3>
-        <p>
-            Infrastructure as Code (IaC) dan containerization memudahkan scaling aplikasi. Infrastruktur dapat di-provision dan di-manage dengan kode, membuat scaling menjadi lebih cepat dan konsisten.
-        </p>
-    </section>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href'))
-                    .scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-=======
-    <section class="hero">
-      <div class="hero-content">
-        <h1>DEVOPS</h1>
-        <p>Culture • Practice • Movement</p>
-      </div>
-    </section>
-
     <!-- About Section -->
     <section id="about" class="about">
         <div class="about-content">
@@ -744,8 +420,8 @@
                 </div>
                 <div>
                     <div class="highlight-box">
-                        <h3 style="font-size: 24px; margin-bottom: 15px; font-weight: 700;">Tujuan Utama</h3>
-                        <p style="font-size: 16px; line-height: 1.8; font-weight: 300;">
+                        <h3 class="highlight-title">Tujuan Utama</h3>
+                        <p>
                             Menghilangkan hambatan antara tim development dan operations, memungkinkan mereka untuk bekerja bersama secara lebih efisien dan produktif sepanjang siklus hidup aplikasi.
                         </p>
                     </div>
@@ -799,134 +475,114 @@
 
     <!-- Benefits Section -->
     <section id="benefits" class="benefits">
-      <h2 class="section-title">Manfaat DevOps</h2>
-      <div class="benefits-list">
-        <div class="benefit-item">
-          <div class="benefit-number">01</div>
-          <div class="benefit-content">
-            <h4>Kecepatan Delivery Lebih Tinggi</h4>
-            <p>
-              Dengan DevOps, tim dapat merilis update dan fitur baru lebih cepat. Automation dalam testing dan deployment memungkinkan proses yang dulunya memakan waktu berhari-hari menjadi hanya beberapa menit.
-            </p>
-          </div>
+        <h2 class="section-title">Manfaat DevOps</h2>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <div class="benefit-number">01</div>
+                <div class="benefit-content">
+                    <h4>Kecepatan Delivery Lebih Tinggi</h4>
+                    <p>
+                        Dengan DevOps, tim dapat merilis update dan fitur baru lebih cepat. Automation dalam testing dan deployment memungkinkan proses yang dulunya memakan waktu berhari-hari menjadi hanya beberapa menit.
+                    </p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">02</div>
+                <div class="benefit-content">
+                    <h4>Kolaborasi Tim Lebih Baik</h4>
+                    <p>
+                        DevOps menghilangkan "silo" antara tim development dan operations. Semua orang bekerja dengan tujuan yang sama, komunikasi lebih lancar, dan masalah dapat diselesaikan lebih cepat.
+                    </p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">03</div>
+                <div class="benefit-content">
+                    <h4>Kualitas dan Stabilitas Meningkat</h4>
+                    <p>
+                        Dengan continuous testing dan monitoring, bug dapat ditemukan lebih awal. Automation dalam testing memastikan setiap kode yang di-deploy sudah melalui serangkaian test yang konsisten.
+                    </p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">04</div>
+                <div class="benefit-content">
+                    <h4>Efisiensi Biaya</h4>
+                    <p>
+                        Automation mengurangi pekerjaan manual yang repetitif. Tim dapat fokus pada pekerjaan yang lebih bernilai. Error dan downtime berkurang sehingga menghemat biaya operasional.
+                    </p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">05</div>
+                <div class="benefit-content">
+                    <h4>Skalabilitas Lebih Mudah</h4>
+                    <p>
+                        Infrastructure as Code (IaC) dan containerization memudahkan scaling aplikasi. Infrastruktur dapat di-provision dan di-manage dengan kode, membuat scaling menjadi lebih cepat dan konsisten.
+                    </p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">06</div>
+                <div class="benefit-content">
+                    <h4>Security</h4>
+                    <p>
+                        Bergerak cepat sambil tetap menjaga kontrol dan preserving compliance dengan menggunakan automated compliance policies dan fine-grained controls.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-number">02</div>
-          <div class="benefit-content">
-            <h4>Kolaborasi Tim Lebih Baik</h4>
-            <p>
-              DevOps menghilangkan "silo" antara tim development dan operations. Semua orang bekerja dengan tujuan yang sama, komunikasi lebih lancar, dan masalah dapat diselesaikan lebih cepat.
-            </p>
-          </div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-number">03</div>
-          <div class="benefit-content">
-            <h4>Kualitas dan Stabilitas Meningkat</h4>
-            <p>
-              Dengan continuous testing dan monitoring, bug dapat ditemukan lebih awal. Automation dalam testing memastikan setiap kode yang di-deploy sudah melalui serangkaian test yang konsisten.
-            </p>
-          </div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-number">04</div>
-          <div class="benefit-content">
-            <h4>Efisiensi Biaya</h4>
-            <p>
-              Automation mengurangi pekerjaan manual yang repetitif. Tim dapat fokus pada pekerjaan yang lebih bernilai. Error dan downtime berkurang sehingga menghemat biaya operasional.
-            </p>
-          </div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-number">05</div>
-          <div class="benefit-content">
-            <h4>Skalabilitas Lebih Mudah</h4>
-            <p>
-              Infrastructure as Code (IaC) dan containerization memudahkan scaling aplikasi. Infrastruktur dapat di-provision dan di-manage dengan kode, membuat scaling menjadi lebih cepat dan konsisten.
-            </p>
-          </div>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-number">06</div>
-          <div class="benefit-content">
-            <h4>Security</h4>
-            <p>
-              Bergerak cepat sambil tetap menjaga kontrol dan preserving
-              compliance dengan menggunakan automated compliance policies dan
-              fine-grained controls.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Video Section -->
     <section id="videos" class="videos">
-      <h2 class="section-title">Video Penjelasan</h2>
-      <div class="videos-grid">
-        <!-- Video 1-->
-        <div class="video-item">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/Xrgk023l4lI"
-              title="Video 1"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <h4>DevOps dalam 5 Menit</h4>
-          <p>Penjelasan singkat tentang DevOps untuk pemula</p>
-        </div>
+        <h2 class="section-title">Video Penjelasan</h2>
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/Xrgk023l4lI"
+                        title="Video 1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <h4>DevOps dalam 5 Menit</h4>
+                <p>Penjelasan singkat tentang DevOps untuk pemula</p>
+            </div>
 
-        <!-- Video 2 -->
-        <div class="video-item">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/6kDpqHRE0BE"
-              title="Video 2"
-              frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <h4>Cara Jadi DevOps Engineer</h4>
-          <p>Panduan menjadi DevOps Engineer di 2023</p>
+            <!-- Video 2 -->
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/6kDpqHRE0BE"
+                        title="Video 2"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <h4>Cara Jadi DevOps Engineer</h4>
+                <p>Panduan menjadi DevOps Engineer di 2023</p>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 DEVOPS CULTURE • Built for Learning & Innovation</p>
+        <p>© 2025 DEVOPS CULTURE • Built for Learning & Innovation</p>
     </footer>
->>>>>>> bintang
 
     <script>
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document
-            .querySelector(this.getAttribute("href"))
-            .scrollIntoView({ behavior: "smooth" });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))
+                    .scrollIntoView({ behavior: 'smooth' });
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
